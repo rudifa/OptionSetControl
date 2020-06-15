@@ -24,6 +24,7 @@
 		9D059BF72497758500BE0DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D059BFA2497758500BE0DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D059BFC2497758500BE0DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D059C02249775F900BE0DDF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		9D059BE22497758200BE0DDF = {
 			isa = PBXGroup;
 			children = (
+				9D059C02249775F900BE0DDF /* README.md */,
 				9D059BED2497758200BE0DDF /* OptionSetControl */,
 				9D059BEC2497758200BE0DDF /* Products */,
 			);
@@ -56,15 +58,39 @@
 		9D059BED2497758200BE0DDF /* OptionSetControl */ = {
 			isa = PBXGroup;
 			children = (
+				9D059BFC2497758500BE0DDF /* Info.plist */,
+				9D059C032497774500BE0DDF /* App */,
+				9D059C052497775500BE0DDF /* Controls */,
+				9D059C042497774D00BE0DDF /* Util */,
+			);
+			path = OptionSetControl;
+			sourceTree = "<group>";
+		};
+		9D059C032497774500BE0DDF /* App */ = {
+			isa = PBXGroup;
+			children = (
 				9D059BEE2497758200BE0DDF /* AppDelegate.swift */,
 				9D059BF02497758200BE0DDF /* SceneDelegate.swift */,
 				9D059BF22497758200BE0DDF /* ViewController.swift */,
 				9D059BF42497758200BE0DDF /* Main.storyboard */,
 				9D059BF72497758500BE0DDF /* Assets.xcassets */,
 				9D059BF92497758500BE0DDF /* LaunchScreen.storyboard */,
-				9D059BFC2497758500BE0DDF /* Info.plist */,
 			);
-			path = OptionSetControl;
+			path = App;
+			sourceTree = "<group>";
+		};
+		9D059C042497774D00BE0DDF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9D059C052497775500BE0DDF /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,13 +311,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LHA84NAPNA;
+				DEVELOPMENT_TEAM = V7R356DGKL;
 				INFOPLIST_FILE = OptionSetControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.rudifa.OptionSetControl;
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.share-telematics.OptionSetControl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,13 +329,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LHA84NAPNA;
+				DEVELOPMENT_TEAM = V7R356DGKL;
 				INFOPLIST_FILE = OptionSetControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.rudifa.OptionSetControl;
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.share-telematics.OptionSetControl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
