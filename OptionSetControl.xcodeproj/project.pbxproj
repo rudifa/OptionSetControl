@@ -13,7 +13,20 @@
 		9D059BF62497758200BE0DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D059BF42497758200BE0DDF /* Main.storyboard */; };
 		9D059BF82497758500BE0DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D059BF72497758500BE0DDF /* Assets.xcassets */; };
 		9D059BFB2497758500BE0DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D059BF92497758500BE0DDF /* LaunchScreen.storyboard */; };
+		9D059C152497782F00BE0DDF /* ShareOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C142497782F00BE0DDF /* ShareOptions.swift */; };
+		9D059C172497784900BE0DDF /* ShareOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C162497784900BE0DDF /* ShareOptionsTests.swift */; };
+		9D059C182497788F00BE0DDF /* ShareOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C142497782F00BE0DDF /* ShareOptions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D059C0F249777F800BE0DDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D059BE32497758200BE0DDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D059BEA2497758200BE0DDF;
+			remoteInfo = OptionSetControl;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9D059BEB2497758200BE0DDF /* OptionSetControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OptionSetControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,10 +38,21 @@
 		9D059BFA2497758500BE0DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D059BFC2497758500BE0DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D059C02249775F900BE0DDF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9D059C0A249777F800BE0DDF /* OptionSetControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OptionSetControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D059C0E249777F800BE0DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D059C142497782F00BE0DDF /* ShareOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareOptions.swift; sourceTree = "<group>"; };
+		9D059C162497784900BE0DDF /* ShareOptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareOptionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9D059BE82497758200BE0DDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D059C07249777F800BE0DDF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +67,7 @@
 			children = (
 				9D059C02249775F900BE0DDF /* README.md */,
 				9D059BED2497758200BE0DDF /* OptionSetControl */,
+				9D059C0B249777F800BE0DDF /* OptionSetControlTests */,
 				9D059BEC2497758200BE0DDF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				9D059BEB2497758200BE0DDF /* OptionSetControl.app */,
+				9D059C0A249777F800BE0DDF /* OptionSetControlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +108,7 @@
 		9D059C042497774D00BE0DDF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9D059C142497782F00BE0DDF /* ShareOptions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -91,6 +118,15 @@
 			children = (
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		9D059C0B249777F800BE0DDF /* OptionSetControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D059C162497784900BE0DDF /* ShareOptionsTests.swift */,
+				9D059C0E249777F800BE0DDF /* Info.plist */,
+			);
+			path = OptionSetControlTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +149,24 @@
 			productReference = 9D059BEB2497758200BE0DDF /* OptionSetControl.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9D059C09249777F800BE0DDF /* OptionSetControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D059C11249777F800BE0DDF /* Build configuration list for PBXNativeTarget "OptionSetControlTests" */;
+			buildPhases = (
+				9D059C06249777F800BE0DDF /* Sources */,
+				9D059C07249777F800BE0DDF /* Frameworks */,
+				9D059C08249777F800BE0DDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D059C10249777F800BE0DDF /* PBXTargetDependency */,
+			);
+			name = OptionSetControlTests;
+			productName = OptionSetControlTests;
+			productReference = 9D059C0A249777F800BE0DDF /* OptionSetControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -125,6 +179,10 @@
 				TargetAttributes = {
 					9D059BEA2497758200BE0DDF = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					9D059C09249777F800BE0DDF = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 9D059BEA2497758200BE0DDF;
 					};
 				};
 			};
@@ -142,6 +200,7 @@
 			projectRoot = "";
 			targets = (
 				9D059BEA2497758200BE0DDF /* OptionSetControl */,
+				9D059C09249777F800BE0DDF /* OptionSetControlTests */,
 			);
 		};
 /* End PBXProject section */
@@ -157,6 +216,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9D059C08249777F800BE0DDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -164,13 +230,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D059C152497782F00BE0DDF /* ShareOptions.swift in Sources */,
 				9D059BF32497758200BE0DDF /* ViewController.swift in Sources */,
 				9D059BEF2497758200BE0DDF /* AppDelegate.swift in Sources */,
 				9D059BF12497758200BE0DDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9D059C06249777F800BE0DDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D059C182497788F00BE0DDF /* ShareOptions.swift in Sources */,
+				9D059C172497784900BE0DDF /* ShareOptionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D059C10249777F800BE0DDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D059BEA2497758200BE0DDF /* OptionSetControl */;
+			targetProxy = 9D059C0F249777F800BE0DDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9D059BF42497758200BE0DDF /* Main.storyboard */ = {
@@ -342,6 +426,46 @@
 			};
 			name = Release;
 		};
+		9D059C12249777F800BE0DDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHA84NAPNA;
+				INFOPLIST_FILE = OptionSetControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.rudifa.OptionSetControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OptionSetControl.app/OptionSetControl";
+			};
+			name = Debug;
+		};
+		9D059C13249777F800BE0DDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LHA84NAPNA;
+				INFOPLIST_FILE = OptionSetControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.rudifa.OptionSetControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OptionSetControl.app/OptionSetControl";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -359,6 +483,15 @@
 			buildConfigurations = (
 				9D059C002497758500BE0DDF /* Debug */,
 				9D059C012497758500BE0DDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D059C11249777F800BE0DDF /* Build configuration list for PBXNativeTarget "OptionSetControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D059C12249777F800BE0DDF /* Debug */,
+				9D059C13249777F800BE0DDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
