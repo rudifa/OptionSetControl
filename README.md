@@ -9,3 +9,10 @@ See also
 [How to Create a Custom Control Using a Bitmask](https://cocoacasts.com/how-to-create-a-custom-control-using-a-bitmask)
 
 [HowToCreateACustomControlUsingABitmask](https://github.com/bartjacobs/HowToCreateACustomControlUsingABitmask)
+
+[Option Set](https://nshipster.com/optionset/) shows an alternative approach.
+
+TODO
+- Picker: add icons, revise layout
+- ShareOptions: revise implementation 
+

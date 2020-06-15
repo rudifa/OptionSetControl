@@ -16,6 +16,8 @@
 		9D059C152497782F00BE0DDF /* ShareOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C142497782F00BE0DDF /* ShareOptions.swift */; };
 		9D059C172497784900BE0DDF /* ShareOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C162497784900BE0DDF /* ShareOptionsTests.swift */; };
 		9D059C182497788F00BE0DDF /* ShareOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C142497782F00BE0DDF /* ShareOptions.swift */; };
+		9DA8C024249BC8BB0077E70B /* DebugUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8C023249BC8BB0077E70B /* DebugUtil.swift */; };
+		9DB7659E2497871500E7D0A3 /* ShareOptionsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7659D2497871500E7D0A3 /* ShareOptionsPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		9D059C0E249777F800BE0DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D059C142497782F00BE0DDF /* ShareOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareOptions.swift; sourceTree = "<group>"; };
 		9D059C162497784900BE0DDF /* ShareOptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareOptionsTests.swift; sourceTree = "<group>"; };
+		9DA8C023249BC8BB0077E70B /* DebugUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugUtil.swift; sourceTree = "<group>"; };
+		9DB7659D2497871500E7D0A3 /* ShareOptionsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOptionsPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		9D059C042497774D00BE0DDF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9DA8C023249BC8BB0077E70B /* DebugUtil.swift */,
 				9D059C142497782F00BE0DDF /* ShareOptions.swift */,
 			);
 			path = Util;
@@ -116,6 +121,7 @@
 		9D059C052497775500BE0DDF /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9DB7659D2497871500E7D0A3 /* ShareOptionsPicker.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 				9D059BF32497758200BE0DDF /* ViewController.swift in Sources */,
 				9D059BEF2497758200BE0DDF /* AppDelegate.swift in Sources */,
 				9D059BF12497758200BE0DDF /* SceneDelegate.swift in Sources */,
+				9DB7659E2497871500E7D0A3 /* ShareOptionsPicker.swift in Sources */,
+				9DA8C024249BC8BB0077E70B /* DebugUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

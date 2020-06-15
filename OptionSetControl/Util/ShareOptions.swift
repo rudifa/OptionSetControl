@@ -15,14 +15,6 @@ import Foundation
 
 struct ShareOptions: OptionSet {
 
-    init(rawValue: Int) {
-        self.rawValue = rawValue
-    }
-
-    init() {
-        rawValue = ShareOptions.all.rawValue
-    }
-
     let rawValue: Int
 
     static let email = ShareOptions(rawValue: 1 << 0)
@@ -33,4 +25,17 @@ struct ShareOptions: OptionSet {
     static let lock = ShareOptions(rawValue: 1 << 5)
 
     static let all: ShareOptions = [.email, .addGroup, .faceTime, .booking, .warning, .lock]
+
+    mutating func toggle(option: ShareOptions) {
+        if self.contains(option) {
+            self.remove(option)
+        } else {
+            self.insert(option)
+        }
+    }
 }
+
+// TODO
+// init?(index: Int)
+// init?(rawValue: Int)
+// generic over an enum?

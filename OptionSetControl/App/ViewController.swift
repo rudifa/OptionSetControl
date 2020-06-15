@@ -10,11 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
+    @IBOutlet weak var optionsPicker: ShareOptionsPicker!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        optionsPicker.setupButtons(buttonsPerRow: 2)
     }
 
+    @IBAction func optionsDidChange(_ sender: ShareOptionsPicker) {
+        // Helpers
+        let userDefaults = UserDefaults.standard
 
+        // Store Value
+        let optionsRawValue = sender.options.rawValue
+        userDefaults.set(optionsRawValue, forKey: UserDefaults.Keys.options)
+    }
 }
 
+extension UserDefaults {
+    enum Keys {
+        static let options = "options"
+    }
+}
