@@ -21,9 +21,9 @@ class ShareOptionsTests: XCTestCase {
         }
         do {
             var opts = ShareOptions(rawValue: ShareOptions.all.rawValue)
+            XCTAssert(opts.contains(.email))
             XCTAssert(opts.contains(.addGroup))
             XCTAssert(opts.contains(.booking))
-            XCTAssert(opts.contains(.email))
             XCTAssert(opts.contains(.faceTime))
             XCTAssert(opts.contains(.lock))
             XCTAssert(opts.contains(.warning))
@@ -31,7 +31,20 @@ class ShareOptionsTests: XCTestCase {
 
             opts.toggle(option: ShareOptions.addGroup)
             XCTAssertFalse(opts.contains(.addGroup))
-
         }
+        do {
+            let opts = ShareOptions(index: 0)
+            XCTAssertNotNil(opts)
+            XCTAssert(opts!.contains(.email))
+        }
+        do {
+            let opts = ShareOptions(index: 5)
+            XCTAssertNotNil(opts)
+            XCTAssert(opts!.contains(.lock))
+            XCTAssertTrue(opts!.isSet(index: 5))
+            XCTAssertFalse(opts!.isSet(index: 0))
+        }
+        XCTAssertNil(ShareOptions(index: -1))
+        XCTAssertNil(ShareOptions(index: 6))
     }
 }

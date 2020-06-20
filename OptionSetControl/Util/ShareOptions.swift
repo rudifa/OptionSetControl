@@ -33,9 +33,25 @@ struct ShareOptions: OptionSet {
             self.insert(option)
         }
     }
+
+    func isSet(index: Int) -> Bool {
+        guard let option = ShareOptions(index: index) else {
+            return false
+        }
+        return self.contains(option)
+    }
+}
+
+extension ShareOptions {
+    init?(index: Int) {
+        if 0 <= index && index <= 5 {
+            self = ShareOptions(rawValue: 1 << index)
+        } else {
+            return nil
+        }
+    }
 }
 
 // TODO
-// init?(index: Int)
 // init?(rawValue: Int)
 // generic over an enum?
