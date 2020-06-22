@@ -12,9 +12,9 @@ import Foundation
 // see https://cocoacasts.com/how-to-work-with-bitmasks-in-swift/
 // see https://cocoacasts.com/how-to-create-a-custom-control-using-a-bitmask
 // see https://github.com/bartjacobs/HowToCreateACustomControlUsingABitmask
+// see https://nshipster.com/optionset/
 
 struct ShareOptions: OptionSet {
-
     let rawValue: Int
 
     static let email = ShareOptions(rawValue: 1 << 0)
@@ -27,10 +27,10 @@ struct ShareOptions: OptionSet {
     static let all: ShareOptions = [.email, .addGroup, .faceTime, .booking, .warning, .lock]
 
     mutating func toggle(option: ShareOptions) {
-        if self.contains(option) {
-            self.remove(option)
+        if contains(option) {
+            remove(option)
         } else {
-            self.insert(option)
+            insert(option)
         }
     }
 
@@ -38,20 +38,16 @@ struct ShareOptions: OptionSet {
         guard let option = ShareOptions(index: index) else {
             return false
         }
-        return self.contains(option)
+        return contains(option)
     }
 }
 
 extension ShareOptions {
     init?(index: Int) {
-        if 0 <= index && index <= 5 {
+        if index >= 0, index <= 5 {
             self = ShareOptions(rawValue: 1 << index)
         } else {
             return nil
         }
     }
 }
-
-// TODO
-// init?(rawValue: Int)
-// generic over an enum?
