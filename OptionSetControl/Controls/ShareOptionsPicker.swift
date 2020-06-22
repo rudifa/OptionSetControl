@@ -87,7 +87,7 @@ class ShareOptionsPicker: UIControl {
 
     func updateButtons() {
         for (index, button) in buttons.enumerated() {
-            button.select(options.isSet(index: index))
+            button.select(options.isSelected(index: index))
         }
     }
 

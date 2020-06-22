@@ -34,10 +34,8 @@ struct ShareOptions: OptionSet {
         }
     }
 
-    func isSet(index: Int) -> Bool {
-        guard let option = ShareOptions(index: index) else {
-            return false
-        }
+    func isSelected(index: Int) -> Bool {
+        guard let option = ShareOptions(index: index) else { return false }
         return contains(option)
     }
 }
