@@ -10,6 +10,8 @@
 
 import UIKit
 
+// MARK: helpers
+
 enum Color {
     static let skyBlue = UIColor(red: 53.0 / 255.0, green: 152.0 / 255.0, blue: 220.0 / 255.0, alpha: 1.0)
 }
@@ -19,12 +21,31 @@ extension UIButton {
         tintColor = sel ? Color.skyBlue : .lightGray
     }
 }
+/**
+ ShareOptionsPicker presents a group of option buttons
+
+ How to add an instance to a ViewController
+
+    1. in .storyboard add a View, set its class to ShareOptionsPicker and add constraints
+
+    2. in .storyboard -> ViewController attach a @IBOutlet weak var optionsPicker
+ 
+    3. in .storyboard -> ViewController attach an @IBAction that will be called when the user clicks one of the control's buttons
+
+    4. in ViewController.viewDidLoad call optionsPicker.setupButtons(buttonsPerRow: 2)
+
+ The number of buttons and systemNames of their icons are defined by the enum ShareOption.
+ Call to setupButtons adds buttons to the ShareOptionsPicker view.
+ */
 
 class ShareOptionsPicker: UIControl {
     private var buttons: [UIButton] = []
-    let systemImageNames = ["envelope", "person.3", "video", "timer", "exclamationmark.triangle", "lock"]
 
-    var options: ShareOptions = [] {
+    /// Get icon image names
+    let systemImageNames = EnumeratedOptions<ShareOption>.rawValues
+
+    /// Initialize with all options selected
+    var options = EnumeratedOptions(ShareOption.allCases) {
         didSet {
             updateButtons()
             printClassAndFunc(info: "options: \(options)")
@@ -33,9 +54,10 @@ class ShareOptionsPicker: UIControl {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .black
+        backgroundColor = .clear
     }
 
+    /// Create buttons and add them to stacks
     func setupButtons(buttonsPerRow: Int) {
         var index = 0
         let rows = (systemImageNames.count - 1) / buttonsPerRow + 1
@@ -87,14 +109,13 @@ class ShareOptionsPicker: UIControl {
 
     func updateButtons() {
         for (index, button) in buttons.enumerated() {
-            button.select(options.isSelected(index: index))
+            button.select(options.isSelected(atIndex: index))
         }
     }
 
     @IBAction func toggleOption(_ button: UIButton) {
         guard let index = buttons.firstIndex(of: button) else { return }
-        guard let option = ShareOptions(index: index) else { return }
-        options.toggle(option: option)
+        options.toggle(atIndex: index)
         updateButtons()
 
         sendActions(for: .valueChanged)
