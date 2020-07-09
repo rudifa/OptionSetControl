@@ -12,10 +12,10 @@ import Foundation
 
 /// Application-specific enumeration of available options
 enum ShareOption: String, Option {
-    case email = "envelope"
+    case email = "pin"
+    case locked = "scope"
+    case booking = "clock"
+    case warning = "exclamationmark.triangle"
     case addGroup = "person.3"
     case faceTime = "video"
-    case booking = "timer"
-    case warning = "exclamationmark.triangle"
-    case locked = "lock"
 }
