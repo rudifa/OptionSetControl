@@ -8,6 +8,15 @@
 
 import XCTest
 
+// enum ShareOption: String, Option {
+//    case geoLoc = "pin"
+//    case publicScope = "scope"
+//    case booking = "clock"
+//    case warning = "exclamationmark.triangle"
+//    case addGroup = "person.3"
+//    case faceTime = "video"
+// }
+
 class ShareOptionsTests: XCTestCase {
     override func setUpWithError() throws {}
 
@@ -20,15 +29,15 @@ class ShareOptionsTests: XCTestCase {
             XCTAssertEqual(opts.rawValue, 0)
 
             opts.select(.booking)
-            XCTAssertEqual(opts.rawValue, 8)
+            XCTAssertEqual(opts.rawValue, 4)
         }
         do {
             var opts = EnumeratedOptions(ShareOption.allCases)
-            XCTAssert(opts.contains(.email))
+            XCTAssert(opts.contains(.geoLoc))
             XCTAssert(opts.contains(.addGroup))
             XCTAssert(opts.contains(.booking))
             XCTAssert(opts.contains(.faceTime))
-            XCTAssert(opts.contains(.locked))
+            XCTAssert(opts.contains(.publicScope))
             XCTAssert(opts.contains(.warning))
             XCTAssertEqual(opts.rawValue, 63)
 
@@ -38,12 +47,12 @@ class ShareOptionsTests: XCTestCase {
         do {
             let opts = EnumeratedOptions<ShareOption>(index: 0)
             XCTAssertNotNil(opts)
-            XCTAssert(opts!.contains(.email))
+            XCTAssert(opts!.contains(.geoLoc))
         }
         do {
             let opts = EnumeratedOptions<ShareOption>(index: 5)
             XCTAssertNotNil(opts)
-            XCTAssert(opts!.contains(.locked))
+            XCTAssert(opts!.contains(.faceTime))
             XCTAssertTrue(opts!.isSelected(atIndex: 5))
             XCTAssertFalse(opts!.isSelected(atIndex: 0))
         }
@@ -53,16 +62,16 @@ class ShareOptionsTests: XCTestCase {
         do {
             let opts = EnumeratedOptions<ShareOption>(rawValue: 5)
             XCTAssertEqual(opts!.rawValue, 5)
-            XCTAssert(opts!.contains(.email))
+            XCTAssert(opts!.contains(.geoLoc))
             XCTAssertFalse(opts!.contains(.addGroup))
-            XCTAssertFalse(opts!.contains(.booking))
-            XCTAssert(opts!.contains(.faceTime))
-            XCTAssertFalse(opts!.contains(.locked))
+            XCTAssert(opts!.contains(.booking))
+            XCTAssertFalse(opts!.contains(.faceTime))
+            XCTAssertFalse(opts!.contains(.publicScope))
             XCTAssertFalse(opts!.contains(.warning))
         }
         do {
             let rawValues = EnumeratedOptions<ShareOption>.rawValues
-            XCTAssertEqual(rawValues, ["envelope", "person.3", "video", "timer", "exclamationmark.triangle", "lock"])
+            XCTAssertEqual(rawValues, ["pin", "scope", "clock", "exclamationmark.triangle", "person.3", "video"])
         }
     }
 }

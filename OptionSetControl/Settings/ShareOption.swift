@@ -12,8 +12,8 @@ import Foundation
 
 /// Application-specific enumeration of available options
 enum ShareOption: String, Option {
-    case email = "pin"
-    case locked = "scope"
+    case geoLoc = "pin"
+    case publicScope = "scope"
     case booking = "clock"
     case warning = "exclamationmark.triangle"
     case addGroup = "person.3"
