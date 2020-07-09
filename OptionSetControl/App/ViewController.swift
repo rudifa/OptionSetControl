@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let userDefaults = UserDefaults.standard
 
         // Store Value
-        let optionsRawValue = sender.options.rawValue
+        let optionsRawValue = sender.options.bitEncoded
         userDefaults.set(optionsRawValue, forKey: UserDefaults.Keys.options)
     }
 }

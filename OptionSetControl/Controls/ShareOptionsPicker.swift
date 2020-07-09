@@ -53,6 +53,7 @@ class ShareOptionsPicker: UIControl {
     }
 
     override func awakeFromNib() {
+        printClassAndFunc()
         super.awakeFromNib()
         backgroundColor = .clear
     }

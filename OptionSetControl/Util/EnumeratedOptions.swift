@@ -31,10 +31,10 @@ struct EnumeratedOptions<OE> where OE: Option {
 
     /// Initialize from  bit-encoded options
     /// - Parameter rawValue: bit-encoded options
-    init?(rawValue: Int) {
-        guard rawValue >= 0, rawValue < (1 << OE.allCases.count) else { return nil }
+    init?(bitEncoded: Int) {
+        guard bitEncoded >= 0, bitEncoded < (1 << OE.allCases.count) else { return nil }
         for index in 0 ..< OE.allCases.count {
-            if rawValue & (1 << index) != 0 {
+            if bitEncoded & (1 << index) != 0 {
                 options.insert(Array(OE.allCases)[index])
             }
         }
@@ -48,14 +48,14 @@ struct EnumeratedOptions<OE> where OE: Option {
     }
 
     /// Returns current options, bit-encoded
-    var rawValue: Int {
-        var rawValue = 0
+    var bitEncoded: Int {
+        var encoded = 0
         for (index, element) in OE.allCases.enumerated() {
             if contains(element) {
-                rawValue |= (1 << index)
+                encoded |= (1 << index)
             }
         }
-        return rawValue
+        return encoded
     }
 
     /// Returns true of the option is selected

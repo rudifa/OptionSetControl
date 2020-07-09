@@ -26,10 +26,10 @@ class ShareOptionsTests: XCTestCase {
         do {
             var opts = EnumeratedOptions<ShareOption>()
             XCTAssertFalse(opts.contains(.booking))
-            XCTAssertEqual(opts.rawValue, 0)
+            XCTAssertEqual(opts.bitEncoded, 0)
 
             opts.select(.booking)
-            XCTAssertEqual(opts.rawValue, 4)
+            XCTAssertEqual(opts.bitEncoded, 4)
         }
         do {
             var opts = EnumeratedOptions(ShareOption.allCases)
@@ -39,7 +39,7 @@ class ShareOptionsTests: XCTestCase {
             XCTAssert(opts.contains(.faceTime))
             XCTAssert(opts.contains(.publicScope))
             XCTAssert(opts.contains(.warning))
-            XCTAssertEqual(opts.rawValue, 63)
+            XCTAssertEqual(opts.bitEncoded, 63)
 
             opts.toggle(.addGroup)
             XCTAssertFalse(opts.contains(.addGroup))
@@ -60,8 +60,8 @@ class ShareOptionsTests: XCTestCase {
         XCTAssertNil(EnumeratedOptions<ShareOption>(index: 6))
 
         do {
-            let opts = EnumeratedOptions<ShareOption>(rawValue: 5)
-            XCTAssertEqual(opts!.rawValue, 5)
+            let opts = EnumeratedOptions<ShareOption>(bitEncoded: 5)
+            XCTAssertEqual(opts!.bitEncoded, 5)
             XCTAssert(opts!.contains(.geoLoc))
             XCTAssertFalse(opts!.contains(.addGroup))
             XCTAssert(opts!.contains(.booking))
