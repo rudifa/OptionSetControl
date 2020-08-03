@@ -17,7 +17,7 @@ import XCTest
 //    case faceTime = "video"
 // }
 
-class ShareOptionsTests: XCTestCase {
+class EnumeratedOptionsTests: XCTestCase {
     override func setUpWithError() throws {}
 
     override func tearDownWithError() throws {}

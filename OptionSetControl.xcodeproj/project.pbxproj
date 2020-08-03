@@ -14,7 +14,7 @@
 		9D059BF82497758500BE0DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D059BF72497758500BE0DDF /* Assets.xcassets */; };
 		9D059BFB2497758500BE0DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D059BF92497758500BE0DDF /* LaunchScreen.storyboard */; };
 		9D059C152497782F00BE0DDF /* EnumeratedOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C142497782F00BE0DDF /* EnumeratedOptions.swift */; };
-		9D059C172497784900BE0DDF /* ShareOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C162497784900BE0DDF /* ShareOptionsTests.swift */; };
+		9D059C172497784900BE0DDF /* EnumeratedOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C162497784900BE0DDF /* EnumeratedOptionsTests.swift */; };
 		9D059C182497788F00BE0DDF /* EnumeratedOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D059C142497782F00BE0DDF /* EnumeratedOptions.swift */; };
 		9DA8C024249BC8BB0077E70B /* DebugUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8C023249BC8BB0077E70B /* DebugUtil.swift */; };
 		9DA8C02724A245710077E70B /* ShareOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8C02624A245710077E70B /* ShareOption.swift */; };
@@ -45,7 +45,7 @@
 		9D059C0A249777F800BE0DDF /* OptionSetControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OptionSetControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D059C0E249777F800BE0DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D059C142497782F00BE0DDF /* EnumeratedOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumeratedOptions.swift; sourceTree = "<group>"; };
-		9D059C162497784900BE0DDF /* ShareOptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareOptionsTests.swift; sourceTree = "<group>"; };
+		9D059C162497784900BE0DDF /* EnumeratedOptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumeratedOptionsTests.swift; sourceTree = "<group>"; };
 		9DA8C023249BC8BB0077E70B /* DebugUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugUtil.swift; sourceTree = "<group>"; };
 		9DA8C02624A245710077E70B /* ShareOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOption.swift; sourceTree = "<group>"; };
 		9DB7659D2497871500E7D0A3 /* ShareOptionsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOptionsPicker.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		9D059C0B249777F800BE0DDF /* OptionSetControlTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D059C162497784900BE0DDF /* ShareOptionsTests.swift */,
+				9D059C162497784900BE0DDF /* EnumeratedOptionsTests.swift */,
 				9D059C0E249777F800BE0DDF /* Info.plist */,
 			);
 			path = OptionSetControlTests;
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D059C182497788F00BE0DDF /* EnumeratedOptions.swift in Sources */,
-				9D059C172497784900BE0DDF /* ShareOptionsTests.swift in Sources */,
+				9D059C172497784900BE0DDF /* EnumeratedOptionsTests.swift in Sources */,
 				9DA8C02824A2465A0077E70B /* ShareOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
