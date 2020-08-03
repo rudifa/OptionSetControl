@@ -1,5 +1,5 @@
 //
-//  EnumeratedOptions.swift
+//  EnumeratedOptions.swift v.0.1.2
 //  OptionSetControl
 //
 //  Created by Rudolf Farkas on 15.06.20.
@@ -12,32 +12,15 @@ protocol Option: RawRepresentable, Hashable, CaseIterable {}
 
 /// Storage for a set of options enumerated by OE
 struct EnumeratedOptions<OE> where OE: Option {
-    /// Storage
-    private var options: Set<OE> = []
+    /// local storage
+    private var bitEncodedOptions: Int = 0
 
-    /// Initialize from an array of options
-    init(_ options: [OE] = []) {
-        for option in options {
-            self.options.insert(option)
-        }
+    private func index(of option: OE) -> Int {
+        return Array(OE.allCases).firstIndex(of: option)!
     }
 
-    /// Initialize with a single option from index
-    /// - Parameter index: into the enum OE
-    init?(index: Int) {
-        guard let eCase = enumCase(index: index) else { return nil }
-        options.insert(eCase)
-    }
-
-    /// Initialize from  bit-encoded options
-    /// - Parameter rawValue: bit-encoded options
-    init?(bitEncoded: Int) {
-        guard bitEncoded >= 0, bitEncoded < (1 << OE.allCases.count) else { return nil }
-        for index in 0 ..< OE.allCases.count {
-            if bitEncoded & (1 << index) != 0 {
-                options.insert(Array(OE.allCases)[index])
-            }
-        }
+    private func bitMask(for option: OE) -> Int {
+        return 1 << index(of: option)
     }
 
     /// Returns the option case for the index, nil if invalid
@@ -47,36 +30,51 @@ struct EnumeratedOptions<OE> where OE: Option {
         return Array(OE.allCases)[index]
     }
 
+    /// Initialize from an array of options
+    init(_ options: [OE] = []) {
+        for option in options {
+            bitEncodedOptions |= bitMask(for: option)
+        }
+    }
+
+    /// Initialize with a single option from index
+    /// - Parameter index: into the enum OE
+    init?(index: Int) {
+        guard let eCase = enumCase(index: index) else { return nil }
+        bitEncodedOptions |= bitMask(for: eCase)
+    }
+
+    /// Initialize from  bit-encoded options
+    /// - Parameter rawValue: bit-encoded options
+    init?(bitEncoded: Int) {
+        guard bitEncoded >= 0, bitEncoded < (1 << OE.allCases.count) else { return nil }
+        bitEncodedOptions = bitEncoded
+    }
+
     /// Returns current options, bit-encoded
     var bitEncoded: Int {
-        var encoded = 0
-        for (index, element) in OE.allCases.enumerated() {
-            if contains(element) {
-                encoded |= (1 << index)
-            }
-        }
-        return encoded
+        return bitEncodedOptions
     }
 
     /// Returns true of the option is selected
     /// - Parameter option
     func contains(_ option: OE) -> Bool {
-        return options.contains(option)
+        return bitEncodedOptions & bitMask(for: option) != 0
     }
 
     /// Selects the option
     /// - Parameter option
     mutating func select(_ option: OE) {
-        options.insert(option)
+        bitEncodedOptions |= bitMask(for: option)
     }
 
     /// Toggles the option
     /// - Parameter option
     mutating func toggle(_ option: OE) {
-        if options.contains(option) {
-            options.remove(option)
+        if contains(option) {
+            bitEncodedOptions &= ~bitMask(for: option)
         } else {
-            options.insert(option)
+            bitEncodedOptions |= bitMask(for: option)
         }
     }
 
@@ -90,8 +88,8 @@ struct EnumeratedOptions<OE> where OE: Option {
     /// Returns true if the option at index is selected
     /// - Parameter atIndex
     func isSelected(atIndex: Int) -> Bool {
-        guard let eCase = enumCase(index: atIndex) else { return false }
-        return options.contains(eCase)
+        guard let option = enumCase(index: atIndex) else { return false }
+        return contains(option)
     }
 
     /// Returns the array of rawValues defined by OE

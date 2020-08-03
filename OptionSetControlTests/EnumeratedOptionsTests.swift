@@ -1,5 +1,5 @@
 //
-//  EnumeratedOptionsTests.swift v.0.1.1
+//  EnumeratedOptionsTests.swift v.0.1.2
 //  OptionSetControlTests
 //
 //  Created by Rudolf Farkas on 15.06.20.
